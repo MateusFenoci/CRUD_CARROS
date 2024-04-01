@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+
+        <div form="form-group">
+            {{ user_form.username.errors }}
+            <label>Usuário: </label>
+            {{ user_form.username }}
+
+        </div>
+        <div form="form-group">
+            {{ user_form.password1.errors }}
+            <label>Senha: </label>
+            {{ user_form.password1 }}
+
+        </div>
+        <div form="form-group">
+            {{ user_form.password2.errors }}
+            <label>Confirmar Senha: </label>
+            {{ user_form.password2 }}
+
+        </div>
+
+        <p> Já tem conta? <a href="{% url 'login' %}"> Logar </p>
+
+        <div form="form-group">
+            <input type="submit" value="Cadastrar"> 
+        </div>
+
+        
+
+    </form>
+
+
+{% endblock %}
+
+
+
